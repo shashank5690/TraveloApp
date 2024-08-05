@@ -18,13 +18,7 @@ const HomeScreen: React.FC = () => {
     dispatch(fetchDestinationsStart());
   }, [dispatch]);
 
-  // if (loading) {
-  //   return <Text style={styles.loading}>Loading...</Text>;
-  // }
 
-  // if (error) {
-  //   return <Text style={styles.error}>Error: {error}</Text>;
-  // }
 
   return (
     <View style={styles.container}>
