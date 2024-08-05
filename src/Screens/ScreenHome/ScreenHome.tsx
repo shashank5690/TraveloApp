@@ -18,13 +18,7 @@ const HomeScreen: React.FC = () => {
     dispatch(fetchDestinationsStart());
   }, [dispatch]);
 
-  if (loading) {
-    return <Text style={styles.loading}>Loading...</Text>;
-  }
 
-  if (error) {
-    return <Text style={styles.error}>Error: {error}</Text>;
-  }
 
   return (
     <View style={styles.container}>
@@ -33,7 +27,7 @@ const HomeScreen: React.FC = () => {
         <Bell style={styles.bellIcon} />
       </View>
       <View style={styles.destinationsHeader}>
-        <Text style={styles.bestDestinations}>Best Destinations here</Text>
+        <Text style={styles.bestDestinations}>Best Destinations</Text>
         <View style={styles.viewAllContainer}>
           <TouchableOpacity>
             <Text style={styles.viewAll}>View All</Text>
