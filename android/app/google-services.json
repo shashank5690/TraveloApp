@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "265851948029",
+    "project_id": "trevello-7b9e6",
+    "storage_bucket": "trevello-7b9e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265851948029:android:6c9ec1b04ee15e76ece794",
+        "android_client_info": {
+          "package_name": "com.traveloapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0c-jcgoK3HWmPMgAE6ungS66syxv5Q6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

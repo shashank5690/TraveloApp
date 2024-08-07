@@ -8,6 +8,7 @@ import { homeEpic } from "../../Screens/ScreenHome/redux/HomeEpic";
 
 const epic: Epic[] = [
     homeEpic,
+    
 ] as Epic[];
 
 export const rootEpic = combineEpics(...epic);

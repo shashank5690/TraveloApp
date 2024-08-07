@@ -1,29 +1,30 @@
 import { StyleSheet } from "react-native";
+import Rating from "../Assets/rating";
 
 const styles = StyleSheet.create({
     card: {
       width: '95%',
       marginBottom: 16,
-      borderRadius: 10,
+      borderRadius: 25,
       overflow: 'hidden',
       backgroundColor: '#fff',
       shadowColor: '#8d99ae',
-      shadowOffset: { width: 3, height: 5 },
+      shadowOffset: { width: 6, height: 5 },
       shadowOpacity: 0.6,
-      shadowRadius: 6,
-      elevation: 12,
+      shadowRadius: 3,
+      elevation: 8,
       marginHorizontal: 12,
     },
     image: {
       width: '100%',
       height: 200,
+      borderRadius: 15,
     },
     cardContent: {
       padding: 16,
     },
     nameHeader: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
       alignItems: 'center',
       marginBottom: 8,
     },
@@ -31,15 +32,24 @@ const styles = StyleSheet.create({
       fontSize: 25,
       fontWeight: 'bold',
       color: '#000',
+      marginLeft:7,
     },
     country: {
-      fontSize: 18,
+      fontSize: 14,
       color: '#FF7029',
       fontWeight: 'bold',
+      marginLeft: 6,
+      marginTop: 8.5,
+    },
+    Rating:{
+      height: 20,
+      alignSelf:'center',
+      marginLeft: 162 ,
+      marginTop :10,
     },
     infoRow: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
+ 
       marginBottom: 8,
     },
     language: {
@@ -48,9 +58,15 @@ const styles = StyleSheet.create({
     },
     topAttractions: {
       fontSize: 16,
-      color: '#000',
+      color: '#7D848D',
       textAlign: 'right',
-      fontWeight: 'bold',
+      marginLeft:10,
+      marginTop: -5,
+    },
+    Location:{
+      // marginLeft: -25,
+      marginTop: -5,
+
     },
     description: {
       fontSize: 12,
@@ -60,4 +76,3 @@ const styles = StyleSheet.create({
   });
 
   export default styles;
-  
