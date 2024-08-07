@@ -35,12 +35,3 @@ export type HomeActions =
   | ReturnType<typeof fetchDestinationsFailure>;
 
 
-
-
-// export const { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure } = imageSlice.actions;
-// export default imageSlice.reducer;
-
-// export type ImageActions = 
-//   | ReturnType<typeof fetchImagesRequest>
-//   | ReturnType<typeof fetchImagesSuccess>
-//   | ReturnType<typeof fetchImagesFailure>;

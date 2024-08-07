@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, Dimensions, TouchableOpacity, StatusBar } from 'react-native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import Onboard1 from '../ScreenOnboard/Assets/onboard1';
 import Onboard2 from '../ScreenOnboard/Assets/onboard2';
 import Onboard3 from '../ScreenOnboard/Assets/onboard3';
 import styles from './styleOnboard';
-
+import { RootStackParamList } from '../../utils/types/navigation';
 
 const { width } = Dimensions.get('window');
 
@@ -13,7 +13,7 @@ const slides = [Onboard1, Onboard2, Onboard3];
 
 const ScreenOnboard: React.FC = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,8 +27,9 @@ const ScreenOnboard: React.FC = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar translucent backgroundColor='transparent' barStyle="light-content" />
       <View style={styles.imageContainer}>
-        <View style={styles.image} >
+        <View style={styles.image}>
           <CurrentSlide width={width} height={500} />
         </View>
       </View>
@@ -54,14 +55,12 @@ const ScreenOnboard: React.FC = () => {
       </View>
       <TouchableOpacity
         style={styles.buttonContainer}
-        // onPress={() => navigation.navigate('YourNextScreen')} // Replace 'YourNextScreen' with your target screen
+        onPress={() => navigation.navigate('ScreenLogin')} 
       >
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
     </View>
   );
 };
-
-
 
 export default ScreenOnboard;
