@@ -88,6 +88,11 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontWeight: 'bold',
   },
+  googleButton: {
+    width: '100%',
+    height: 48,
+    marginVertical: 16,
+  },
   errorText: {
     color: 'red',
     fontSize: 12,

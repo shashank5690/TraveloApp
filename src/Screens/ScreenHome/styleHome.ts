@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
       width: 322 ,
       height: 150, 
     },
-    bellIcon: {
+    LogoutIcon: {
       width: 40,
       height: 40,
       marginTop:-50,

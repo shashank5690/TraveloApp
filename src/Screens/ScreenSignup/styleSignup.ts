@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
     marginBottom: 5,
 
   },
+  googleButton: {
+    width: '100%',
+    height: 48,
+    marginVertical: 16,
+  },
   input: {
     height: 56,
     width: '100%',
