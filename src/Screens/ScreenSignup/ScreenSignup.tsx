@@ -1,12 +1,15 @@
-import React from 'react';
-import { View, Text, TextInput, Alert, TouchableOpacity, Image, Button } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, TextInput, Alert, TouchableOpacity, Image } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './styleSignup';
 import { FormValues, RegisterScreenNavigationProp } from './utils/types/interfaces';
 import { schema } from './utils/schema/validation';
-import { signupUser } from '../../utils/firebaseAuth';
+import { signupUser, loginWithGoogle } from '../../utils/firebaseAuth';
 import { useDispatch } from 'react-redux';
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+
 
 type ScreenRegisterProps = {
   navigation: RegisterScreenNavigationProp;
@@ -19,10 +22,18 @@ const ScreenRegister: React.FC<ScreenRegisterProps> = ({ navigation }) => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: '265851948029-u0d1v01m4c44h1h97uo6l1jqjubichgn.apps.googleusercontent.com', 
+    });
+  }, []);
+
   const onSubmit = (data: FormValues) => {
-    // console.log(data);
-      signupUser(data, dispatch);
-      navigation.navigate('HomeScreen');
+    signupUser(data, dispatch);
+  };
+
+  const handleGoogleSignIn = async () => {
+    loginWithGoogle(dispatch);
   };
 
   return (
@@ -66,6 +77,12 @@ const ScreenRegister: React.FC<ScreenRegisterProps> = ({ navigation }) => {
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
 
+      <GoogleSigninButton
+        style={styles.googleButton}
+        size={GoogleSigninButton.Size.Wide}
+        color={GoogleSigninButton.Color.Dark}
+        onPress={handleGoogleSignIn}
+      />
 
       <View style={styles.socialMediaIcons}>
         <Image source={require('../ScreenLogin/utils/Assets/google.png')} style={styles.socialIcon} />

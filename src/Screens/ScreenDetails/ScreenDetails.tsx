@@ -29,7 +29,7 @@ const Details: React.FC = () => {
         <Text style={styles.About}>About Destination</Text>
         <Text style={styles.description}>{item.description}</Text>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Book Now</Text>
+          <Text style={styles.buttonText}>Add to Favorite</Text>
         </TouchableOpacity>
       </View>
     </View>

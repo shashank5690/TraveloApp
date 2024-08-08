@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity, Button, StatusBar } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../utils/redux/rootReducer';
 import { fetchDestinationsStart } from './redux/HomeSlice';
@@ -7,30 +7,32 @@ import Card from '../ScreenHome/components/Card';
 import Headsvg from '../ScreenHome/Assets/headsvg'; 
 import Bell from '../ScreenHome/Assets/bell';
 import  styles  from './styleHome';
+import { HomeScreenProps } from '../../utils/types/interface';
+import { logoutUser } from '../../utils/firebaseAuth';
+import Logout from '../../Assets/logout';
 
 const { width } = Dimensions.get('window');
 
-const HomeScreen: React.FC = () => {
+const HomeScreen: React.FC<HomeScreenProps> = () => {
   const dispatch = useDispatch();
   const { destinations, loading, error } = useSelector((state: RootState) => state.home);
-
+  
   useEffect(() => {
     dispatch(fetchDestinationsStart());
   }, [dispatch]);
 
-  if (loading) {
-    return <Text style={styles.loading}>Loading...</Text>;
-  }
-
-  if (error) {
-    return <Text style={styles.error}>Error: {error}</Text>;
+  const handleLogout =  () =>  {
+     logoutUser(dispatch);
   }
 
   return (
     <View style={styles.container}>
+    <StatusBar translucent backgroundColor='transparent' barStyle="light-content" />
       <View style={styles.header}>
         <Headsvg style={styles.headSVG} /> 
-        <Bell style={styles.bellIcon} />
+        <TouchableOpacity onPress={handleLogout}>
+        <Logout style={styles.LogoutIcon} />
+        </TouchableOpacity>
       </View>
       <View style={styles.destinationsHeader}>
         <Text style={styles.bestDestinations}>Best Destinations</Text>
