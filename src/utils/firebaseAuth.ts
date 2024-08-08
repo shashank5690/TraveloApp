@@ -7,9 +7,9 @@ import { setUser } from '../Screens/ScreenLogin/redux/authSlice';
 import { AppDispatch } from './redux/store';
 import { useEffect } from 'react';
 
-GoogleSignin.configure({
-  webClientId: '265851948029-u0d1v01m4c44h1h97uo6l1jqjubichgn.apps.googleusercontent.com',
-});
+// GoogleSignin.configure({
+//   webClientId: '265851948029-u0d1v01m4c44h1h97uo6l1jqjubichgn.apps.googleusercontent.com',
+// });
 
 
 export const loginUser = async (email: string, password: string, dispatch: AppDispatch) => {

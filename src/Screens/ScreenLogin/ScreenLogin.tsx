@@ -82,11 +82,11 @@ const ScreenLogin: React.FC<ScreenLoginProps> = ({ navigation }) => {
       <GoogleSigninButton
         style={styles.googleButton}
         size={GoogleSigninButton.Size.Wide}
-        color={GoogleSigninButton.Color.Dark}
+        color={GoogleSigninButton.Color.Light}
         onPress={handleGoogleSignIn}
       />
       <View style={styles.socialMediaIcons}>
-        <Image source={require('../ScreenLogin/utils/Assets/google.png')} style={styles.socialIcon} />
+        {/* <Image source={require('../ScreenLogin/utils/Assets/google.png')} style={styles.socialIcon} /> */}
         <Image source={require('../ScreenLogin/utils/Assets/fb.png')} style={styles.socialIcon} />
         <Image source={require('../ScreenLogin/utils/Assets/apple.png')} style={styles.socialIcon} />
       </View>

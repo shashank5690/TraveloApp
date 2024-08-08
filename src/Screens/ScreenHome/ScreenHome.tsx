@@ -21,16 +21,8 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
     dispatch(fetchDestinationsStart());
   }, [dispatch]);
 
-  const handleLogout = async () =>  {
-    await logoutUser(dispatch);
-  }
-
-  if (loading) {
-    return <Text style={styles.loading}>Loading...</Text>;
-  }
-
-  if (error) {
-    return <Text style={styles.error}>Error: {error}</Text>;
+  const handleLogout =  () =>  {
+     logoutUser(dispatch);
   }
 
   return (

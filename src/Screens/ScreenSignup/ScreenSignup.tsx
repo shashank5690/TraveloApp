@@ -11,7 +11,6 @@ import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 
-
 type ScreenRegisterProps = {
   navigation: RegisterScreenNavigationProp;
 };

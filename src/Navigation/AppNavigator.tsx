@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,7 +12,7 @@ import { AuthStackParamList, AppStackParamList } from '../utils/types/interface'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { setUser } from '../Screens/ScreenLogin/redux/authSlice';
 import auth from '@react-native-firebase/auth';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import Splash from '../Screens/ScreenSplash/SplashScreen'; 
 
 const AuthStack = createStackNavigator<AuthStackParamList>();
 const AppStack = createStackNavigator<AppStackParamList>();
@@ -20,7 +20,7 @@ const AppStack = createStackNavigator<AppStackParamList>();
 const AppNavigator: React.FC = () => {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isSplashVisible, setIsSplashVisible] = useState(true);
 
   useEffect(() => {
     const checkToken = async () => {
@@ -41,19 +41,17 @@ const AppNavigator: React.FC = () => {
       } catch (error) {
         dispatch(setUser(null));
       } finally {
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsSplashVisible(false);
+        }, 1500); 
       }
     };
 
     checkToken();
   }, [dispatch]);
 
-  if (isLoading) {
-    return (
-      <View style={styles.loaderContainer}>
-        <ActivityIndicator size='large' color="#FF7029" />
-      </View>
-    );
+  if (isSplashVisible) {
+    return <Splash />;
   }
 
   return (
@@ -73,13 +71,5 @@ const AppNavigator: React.FC = () => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  loaderContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default AppNavigator;
