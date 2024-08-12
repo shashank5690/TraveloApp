@@ -12,7 +12,20 @@
           "package_name": "com.traveloapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "265851948029-dcag8f9udkrc26upcieikhbkiuppij6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.traveloapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "265851948029-u0d1v01m4c44h1h97uo6l1jqjubichgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC0c-jcgoK3HWmPMgAE6ungS66syxv5Q6g"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265851948029-22d58o39b7e29kviai7lc6bfet0grqd6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

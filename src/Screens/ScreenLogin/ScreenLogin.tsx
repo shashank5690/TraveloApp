@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, TextInput, Alert, TouchableOpacity, Image } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import auth from '@react-native-firebase/auth';
 import styles from './styleLogin';
 import { FormValues, LoginScreenNavigationProp } from './utils/types/interfaces';
-import { schema } from './utils/schema/validation'; // Ensure this validation schema is updated to reflect email and password
-import { loginUser } from '../../utils/firebaseAuth';
+import { schema } from './utils/schema/validation';
+import { loginUser, loginWithGoogle } from '../../utils/firebaseAuth';
 import { useDispatch } from 'react-redux';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 
 type ScreenLoginProps = {
   navigation: LoginScreenNavigationProp;
@@ -18,14 +20,23 @@ const ScreenLogin: React.FC<ScreenLoginProps> = ({ navigation }) => {
     resolver: yupResolver(schema),
   });
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: '265851948029-u0d1v01m4c44h1h97uo6l1jqjubichgn.apps.googleusercontent.com',
+    });
+  }, []);
 
   const onSubmit = async (data: FormValues) => {
-    loginUser(data.email, data.password , dispatch);
-    // console.log(data);
-    navigation.navigate('HomeScreen')
+    loginUser(data.email, data.password, dispatch);
   }
+
+  const handleGoogleSignIn = async () => {
+    loginWithGoogle(dispatch);
+  };
+ 
+  
 
   return (
     <View style={styles.container}>
@@ -68,8 +79,14 @@ const ScreenLogin: React.FC<ScreenLoginProps> = ({ navigation }) => {
       <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
+      <GoogleSigninButton
+        style={styles.googleButton}
+        size={GoogleSigninButton.Size.Wide}
+        color={GoogleSigninButton.Color.Light}
+        onPress={handleGoogleSignIn}
+      />
       <View style={styles.socialMediaIcons}>
-        <Image source={require('../ScreenLogin/utils/Assets/google.png')} style={styles.socialIcon} />
+        {/* <Image source={require('../ScreenLogin/utils/Assets/google.png')} style={styles.socialIcon} /> */}
         <Image source={require('../ScreenLogin/utils/Assets/fb.png')} style={styles.socialIcon} />
         <Image source={require('../ScreenLogin/utils/Assets/apple.png')} style={styles.socialIcon} />
       </View>

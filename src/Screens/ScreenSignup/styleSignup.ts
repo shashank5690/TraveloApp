@@ -1,56 +1,61 @@
 import { StyleSheet } from 'react-native';
+import { widthPercentageToDP, heightPercentageToDP } from '../../Assets/responsive/res';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-    padding: 20,
+    padding: widthPercentageToDP('5%'),
     position: 'relative',
   },
   title: {
-    fontSize: 32,
+    fontSize: widthPercentageToDP('8%'),
     fontWeight: 'bold',
-    marginBottom: 20,
-    alignSelf:'flex-start',
+    marginBottom: heightPercentageToDP('2%'),
+    alignSelf: 'flex-start',
     color: '#000000',
     fontFamily: 'Roboto',
   },
   label: {
-    fontSize: 18,
+    fontSize: widthPercentageToDP('5%'),
     fontWeight: 'bold',
     color: '#000000',
-    marginBottom: 5,
-
+    marginBottom: heightPercentageToDP('1%'),
+  },
+  googleButton: {
+    width: '100%',
+    height: heightPercentageToDP('7%'),
+    marginVertical: heightPercentageToDP('2%'),
   },
   input: {
-    height: 56,
+    height: heightPercentageToDP('7%'),
     width: '100%',
     borderColor: '#CCCCCC',
     borderWidth: 2,
     borderRadius: 8,
-    paddingHorizontal: 10,
-    marginBottom: 15,
+    paddingHorizontal: widthPercentageToDP('3%'),
+    marginBottom: heightPercentageToDP('2%'),
     backgroundColor: '#ffffff',
-    fontSize: 16,
-    fontWeight: 'normal', // Changed to normal for better readability
+    fontSize: widthPercentageToDP('4%'),
+    fontWeight: 'normal',
   },
   button: {
     backgroundColor: '#000000',
     borderRadius: 8,
-    paddingVertical: 15,
+    paddingVertical: heightPercentageToDP('3%'),
     alignItems: 'center',
-    marginVertical: 20, // Combined top and bottom margin into a single property
+    marginVertical: heightPercentageToDP('3%'),
   },
   buttonText: {
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: widthPercentageToDP('5%'),
     fontWeight: 'bold',
   },
   registerPrompt: {
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: widthPercentageToDP('4%'),
     color: '#000000',
-    marginTop: 30, // Adjusted top margin for better spacing
+    marginTop: heightPercentageToDP('4%'),
   },
   loginText: {
     color: '#000000',
@@ -59,31 +64,28 @@ const styles = StyleSheet.create({
   socialMediaIcons: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-   
+    marginVertical: heightPercentageToDP('2%'),
   },
   socialIcon: {
-    width: 116,
-    height: 60,
+    width: widthPercentageToDP('30%'),
+    height: heightPercentageToDP('6%'),
     borderWidth: 2,
   },
-
   registerLink: {
-
-    // ... register link styles ...
-
+    // Add styles if needed
   },
   headerImage: {
     position: 'absolute',
-    top: 10,
-    right: 15,
-    width: 50,
-    height: 50,
+    top: heightPercentageToDP('2%'),
+    right: widthPercentageToDP('4%'),
+    width: widthPercentageToDP('12%'),
+    height: widthPercentageToDP('12%'),
   },
   errorText: {
     color: 'red',
-    fontSize: 12,
-    marginBottom: 10,
-    marginLeft: 10,
+    fontSize: widthPercentageToDP('3%'),
+    marginBottom: heightPercentageToDP('1%'),
+    marginLeft: widthPercentageToDP('2%'),
   },
 });
 
