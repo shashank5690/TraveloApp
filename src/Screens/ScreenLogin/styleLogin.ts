@@ -77,6 +77,13 @@ const styles = StyleSheet.create({
     width: widthPercentageToDP('12%'),
     height: widthPercentageToDP('12%'),
   },
+  inputContainer: {
+    width: '100%',
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+
   alreadyMember: {
     textAlign: 'center',
     fontSize: widthPercentageToDP('4%'),
