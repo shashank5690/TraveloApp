@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity, Button, StatusBar } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StatusBar } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../utils/redux/rootReducer';
 import { fetchDestinationsStart } from './redux/HomeSlice';
 import Card from '../ScreenHome/components/Card'; 
 import Headsvg from '../ScreenHome/Assets/headsvg'; 
-import Bell from '../ScreenHome/Assets/bell';
 import  styles  from './styleHome';
 import { HomeScreenProps } from '../../utils/types/interface';
 import { logoutUser } from '../../utils/firebaseAuth';
 import Logout from '../../Assets/logout';
 
-const { width } = Dimensions.get('window');
 
 const HomeScreen: React.FC<HomeScreenProps> = () => {
   const dispatch = useDispatch();
@@ -20,6 +18,10 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   useEffect(() => {
     dispatch(fetchDestinationsStart());
   }, [dispatch]);
+
+  
+
+// logout
 
   const handleLogout =  () =>  {
      logoutUser(dispatch);
