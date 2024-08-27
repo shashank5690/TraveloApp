@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { Alert } from 'react-native';
+import { Alert,  } from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 import PushController from './src/Notification/PushController';
 import AppNavigator from './src/Navigation/AppNavigator'; 
 import store from './src/utils/redux/store'; 
+import NetworkLogger  from 'react-native-network-logger';
+import { View, Button } from 'react-native';
 
 const App = () => {
 
@@ -88,7 +90,10 @@ const App = () => {
   return (
     <Provider store={store}>
       <PushController />
-      <AppNavigator />
+
+    <AppNavigator />
+
+
     </Provider>
   );
 };

@@ -7,7 +7,7 @@ export default function Splash(){
     return(
         <View style={{flex:1,}}>
             <LottieView
-                source={require('../../Assets/splashLoading.json')}
+                source={require('../../Assets/splashLoading1.json')}
                 autoPlay
                 loop={false}
                 style={{width: '100%', height: '100%'}}

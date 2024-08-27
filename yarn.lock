@@ -7077,6 +7077,11 @@ react-native-mmkv@^2.12.2:
   resolved "https://registry.npmjs.org/react-native-mmkv/-/react-native-mmkv-2.12.2.tgz"
   integrity sha512-6058Aq0p57chPrUutLGe9fYoiDVDNMU2PKV+lLFUJ3GhoHvUrLdsS1PDSCLr00yqzL4WJQ7TTzH+V8cpyrNcfg==
 
+react-native-network-logger@^1.16.1:
+  version "1.16.1"
+  resolved "https://registry.npmjs.org/react-native-network-logger/-/react-native-network-logger-1.16.1.tgz"
+  integrity sha512-R2qALPeUnce1ZTsgjEnrBxvsehcgydXIoDaTW8X2qUN6QembPvPUErrEuKiJGZT/e//DLp1NV6Weep0xeBTUPw==
+
 react-native-push-notification@^8.1.1:
   version "8.1.1"
   resolved "https://registry.npmjs.org/react-native-push-notification/-/react-native-push-notification-8.1.1.tgz"

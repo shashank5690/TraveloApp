@@ -44,6 +44,7 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
           </TouchableOpacity>
         </View>
       </View>
+      
       <FlatList
         data={destinations}
         renderItem={({ item }) => <Card item={item} />} 

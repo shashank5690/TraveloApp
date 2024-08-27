@@ -43,7 +43,7 @@ const AppNavigator: React.FC = () => {
       } finally {
         setTimeout(() => {
           setIsSplashVisible(false);
-        }, 1500); 
+        }, 3000); 
       }
     };
 
